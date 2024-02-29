@@ -16,7 +16,7 @@
         </div>
         
         <div class="form-check">
-          <button class="btn btn-lg btn-primary float-right" type="submit"> Đăng Nhập</button>
+          <button class="btn btn-lg btn-primary float-right" type="submit" name="submit"> Đăng Nhập</button>
         </div>
 
       </form>
