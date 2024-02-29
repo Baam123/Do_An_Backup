@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 25, 2023 lúc 04:25 AM
+-- Thời gian đã tạo: Th2 29, 2024 lúc 04:38 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `shopgun`
+-- Cơ sở dữ liệu: `gunstore`
 --
 
 -- --------------------------------------------------------
@@ -55,7 +55,7 @@ CREATE TABLE `comment` (
 
 INSERT INTO `comment` (`idcomment`, `idkh`, `idhanghoa`, `content`, `luotthich`) VALUES
 (1, 3, 24, 'Đẹp', 0),
-(2, 3, 22, 'Lực mạnh', 0);
+(2, 3, 22, 'Lực bắn mạnh', 0);
 
 -- --------------------------------------------------------
 
@@ -275,6 +275,25 @@ INSERT INTO `mausac` (`Idmau`, `mausac`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL,
+  `ten_menu` varchar(255) NOT NULL,
+  `href` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `menu`
+--
+
+INSERT INTO `menu` (`id`, `ten_menu`, `href`) VALUES
+(1, 'Liên hệ', '#footer');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `nhanvien`
 --
 
@@ -373,6 +392,12 @@ ALTER TABLE `mausac`
   ADD PRIMARY KEY (`Idmau`);
 
 --
+-- Chỉ mục cho bảng `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
@@ -429,6 +454,12 @@ ALTER TABLE `loai`
 --
 ALTER TABLE `mausac`
   MODIFY `Idmau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT cho bảng `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `nhanvien`
