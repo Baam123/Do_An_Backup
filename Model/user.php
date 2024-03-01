@@ -23,8 +23,8 @@ class user
     function loginKH($user, $pass)
     {
         $db = new connect();
-        $select = "SELECT * FROM khachhang a WHERE a.username='$user' and a.matkhau='$pass'";
-        echo $select;
+        $select = "SELECT * FROM khachhang  WHERE username='$user' and matkhau='$pass'";
+       // echo $select;
         $result = $db->getInstance($select);
         return $result;
     }
